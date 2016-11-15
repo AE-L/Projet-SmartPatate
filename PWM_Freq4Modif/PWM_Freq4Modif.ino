@@ -2,7 +2,7 @@
 // PWM Square Wave Generator
 // VLO 2013-2014
 //****************************************************************************************
-  int LED_1 = 11;
+  int LED_1 = 11; //initialisation LED
   int LED_2 = 12;
   int LED_3 = 13;
 
