@@ -37,28 +37,36 @@ void loop()
 {
 
 
-  int val = analogRead(A0);                                              
+  int val = analogRead(0);                                              
   Serial.write( 0xff );                                                         
   Serial.write( (val >> 8) & 0xff );                                            
   Serial.write( val & 0xff );
 
-  if ( val <62 ) //Paume 1.15V
+  if ( val <235 ) //Paume 1.15V
   {
-    Serial.println("Paume");
+    digitalWrite(LED_1, HIGH);
+    digitalWrite(LED_2, HIGH);
+    digitalWrite(LED_3, HIGH);
   }
-  else if ( val < 64) //Deux doigts 1.25V
+  else if ( val < 255) //Deux doigts 1.25V
   {
-    Serial.println("DeuxDoigts");
+    digitalWrite(LED_1, HIGH);
+    digitalWrite(LED_2, HIGH);
+    digitalWrite(LED_3, LOW);
     
   }
-  else if ( val < 71) //Un doigt 1.40V
+  else if ( val < 286) //Un doigt 1.40V
   {
-    Serial.println("UnDoigt");
+    digitalWrite(LED_1, HIGH);
+    digitalWrite(LED_2, LOW);
+    digitalWrite(LED_3, LOW);
     
   }
   else
   {
-    Serial.println("Nothing");
+    digitalWrite(LED_1, LOW);
+    digitalWrite(LED_2, LOW);
+    digitalWrite(LED_3, LOW);
   }
   
 }
