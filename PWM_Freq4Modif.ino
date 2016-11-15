@@ -42,7 +42,7 @@ void loop()
   Serial.write( (val >> 8) & 0xff );                                            
   Serial.write( val & 0xff );
 
-  if ( val <61 ) //Paume 1.15V
+  if ( val <62 ) //Paume 1.15V
   {
     digitalWrite(LED_1, HIGH);
     digitalWrite(LED_2, HIGH);
