@@ -44,29 +44,21 @@ void loop()
 
   if ( val <62 ) //Paume 1.15V
   {
-    digitalWrite(LED_1, HIGH);
-    digitalWrite(LED_2, HIGH);
-    digitalWrite(LED_3, HIGH);
+    Serial.println("Paume");
   }
   else if ( val < 64) //Deux doigts 1.25V
   {
-    digitalWrite(LED_1, HIGH);
-    digitalWrite(LED_2, HIGH);
-    digitalWrite(LED_3, LOW);
+    Serial.println("DeuxDoigts");
     
   }
   else if ( val < 71) //Un doigt 1.40V
   {
-    digitalWrite(LED_1, HIGH);
-    digitalWrite(LED_2, LOW);
-    digitalWrite(LED_3, LOW);
+    Serial.println("UnDoigt");
     
   }
   else
   {
-    digitalWrite(LED_1, LOW);
-    digitalWrite(LED_2, LOW);
-    digitalWrite(LED_3, LOW);
+    Serial.println("Nothing");
   }
   
 }
